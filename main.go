@@ -32,5 +32,6 @@ func main() {
 	r.Get("/readiness", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
+	log.Printf("echosrv listening on %s", port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), r))
 }
